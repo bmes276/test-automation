@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.7.8 on win32)" generated="20220427 17:22:29.418" rpa="false" schemaversion="2">
+<suite id="s1" name="Scenario4" source="C:\Users\bmesraf\IdeaProjects\testin_assessment\useCases\Scenario4.robot">
+<test id="s1-t1" name="Scenario_4">
+<kw name="Ouvrir application Web" library="connexion">
+<arg>${URL-2}</arg>
+<doc>Ouvre le navigateur WEB</doc>
+<kw name="Log To Console" library="BuiltIn">
+<arg>navigate to the page</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:22:29.650" endtime="20220427 17:22:29.650"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220427 17:22:29.650" level="INFO">Opening browser 'Chrome' to base url 'https://testingwithclarity.com/ClarityTestPage/ClarityTestPage.html?withOverlay'.</msg>
+<status status="PASS" starttime="20220427 17:22:29.650" endtime="20220427 17:22:55.604"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 17:22:58.616" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220427 17:22:55.604" endtime="20220427 17:22:58.616"/>
+</kw>
+<status status="PASS" starttime="20220427 17:22:29.650" endtime="20220427 17:22:58.617"/>
+</kw>
+<kw name="insert value on input 1 and verify other inputs" library="keywords-scenario4">
+<arg>${value}</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>insert value on input 1</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:22:58.617" endtime="20220427 17:22:58.618"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=input[id="input_text1"]</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220427 17:22:58.618" level="INFO">Typing text 'boutayna' into text field 'css=input[id="input_text1"]'.</msg>
+<status status="PASS" starttime="20220427 17:22:58.618" endtime="20220427 17:22:58.757"/>
+</kw>
+<kw name="click on button propagate" library="keywords-scenario4">
+<kw name="Log To Console" library="BuiltIn">
+<arg>click on button propagate</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:22:58.758" endtime="20220427 17:22:58.758"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#propagate</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220427 17:22:58.759" level="INFO">Clicking element 'css=#propagate'.</msg>
+<status status="PASS" starttime="20220427 17:22:58.759" endtime="20220427 17:22:58.815"/>
+</kw>
+<status status="PASS" starttime="20220427 17:22:58.758" endtime="20220427 17:22:58.815"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#text</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220427 17:22:58.816" endtime="20220427 17:22:59.982"/>
+</kw>
+<kw name="Close overlay" library="keywords-scenario4">
+<kw name="Log To Console" library="BuiltIn">
+<arg>close overlay</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:22:59.982" endtime="20220427 17:22:59.982"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>XPath=//*[contains(text(), 'Close')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220427 17:22:59.982" level="INFO">Clicking element 'XPath=//*[contains(text(), 'Close')]'.</msg>
+<status status="PASS" starttime="20220427 17:22:59.982" endtime="20220427 17:23:00.060"/>
+</kw>
+<status status="PASS" starttime="20220427 17:22:59.982" endtime="20220427 17:23:00.060"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>verify that other inputs contains same value</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:23:00.062" endtime="20220427 17:23:00.062"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>4</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 17:23:02.067" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 17:23:00.063" endtime="20220427 17:23:02.067"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<arg>${value}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220427 17:23:02.115" level="INFO">Content of text field 'xpath=(//input[@name='inputText'])[1]' is 'boutayna'.</msg>
+<status status="PASS" starttime="20220427 17:23:02.068" endtime="20220427 17:23:02.115"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:00.063" endtime="20220427 17:23:02.115"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 17:23:04.129" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 17:23:02.116" endtime="20220427 17:23:04.129"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<arg>${value}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220427 17:23:04.192" level="INFO">Content of text field 'xpath=(//input[@name='inputText'])[2]' is 'boutayna'.</msg>
+<status status="PASS" starttime="20220427 17:23:04.130" endtime="20220427 17:23:04.193"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:02.116" endtime="20220427 17:23:04.193"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 17:23:06.205" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220427 17:23:04.193" endtime="20220427 17:23:06.205"/>
+</kw>
+<kw name="Textfield Value Should Be" library="SeleniumLibrary">
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<arg>${value}</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<msg timestamp="20220427 17:23:06.267" level="INFO">Content of text field 'xpath=(//input[@name='inputText'])[3]' is 'boutayna'.</msg>
+<status status="PASS" starttime="20220427 17:23:06.205" endtime="20220427 17:23:06.267"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:04.193" endtime="20220427 17:23:06.267"/>
+</iter>
+<status status="PASS" starttime="20220427 17:23:00.062" endtime="20220427 17:23:06.268"/>
+</for>
+<status status="PASS" starttime="20220427 17:22:58.617" endtime="20220427 17:23:06.268"/>
+</kw>
+<kw name="clear all and validate that inputs are empty" library="keywords-scenario4">
+<kw name="Log To Console" library="BuiltIn">
+<arg>clear all</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:23:06.269" endtime="20220427 17:23:06.269"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>XPath=//*[contains(text(), 'Clear All')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220427 17:23:06.269" level="INFO">Clicking element 'XPath=//*[contains(text(), 'Clear All')]'.</msg>
+<status status="PASS" starttime="20220427 17:23:06.269" endtime="20220427 17:23:06.334"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220427 17:23:09.342" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220427 17:23:06.334" endtime="20220427 17:23:09.342"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>inputs are empty</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:23:09.343" endtime="20220427 17:23:09.344"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>4</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>bad value</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220427 17:23:09.347" endtime="20220427 17:23:09.390"/>
+</kw>
+<kw name="Wait Until Element Does Not Contain" library="SeleniumLibrary">
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<arg>'bad value'</arg>
+<doc>Waits until the element ``locator`` does not contain ``text``.</doc>
+<status status="PASS" starttime="20220427 17:23:09.391" endtime="20220427 17:23:09.427"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${value}</var>
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220427 17:23:09.455" level="INFO">${value} = </msg>
+<status status="PASS" starttime="20220427 17:23:09.428" endtime="20220427 17:23:09.455"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:23:09.455" endtime="20220427 17:23:09.456"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${value}'=='None'</arg>
+<arg>log to console</arg>
+<arg>${value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220427 17:23:09.457" endtime="20220427 17:23:09.458"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:09.346" endtime="20220427 17:23:09.458"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>bad value</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220427 17:23:09.458" endtime="20220427 17:23:09.477"/>
+</kw>
+<kw name="Wait Until Element Does Not Contain" library="SeleniumLibrary">
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<arg>'bad value'</arg>
+<doc>Waits until the element ``locator`` does not contain ``text``.</doc>
+<status status="PASS" starttime="20220427 17:23:09.477" endtime="20220427 17:23:09.515"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${value}</var>
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220427 17:23:09.544" level="INFO">${value} = </msg>
+<status status="PASS" starttime="20220427 17:23:09.516" endtime="20220427 17:23:09.544"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:23:09.544" endtime="20220427 17:23:09.544"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${value}'=='None'</arg>
+<arg>log to console</arg>
+<arg>${value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220427 17:23:09.544" endtime="20220427 17:23:09.544"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:09.458" endtime="20220427 17:23:09.544"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Wait Until Page Does Not Contain" library="SeleniumLibrary">
+<arg>bad value</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220427 17:23:09.544" endtime="20220427 17:23:09.566"/>
+</kw>
+<kw name="Wait Until Element Does Not Contain" library="SeleniumLibrary">
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<arg>'bad value'</arg>
+<doc>Waits until the element ``locator`` does not contain ``text``.</doc>
+<status status="PASS" starttime="20220427 17:23:09.566" endtime="20220427 17:23:09.598"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${value}</var>
+<arg>xpath=(//input[@name='inputText'])[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220427 17:23:09.628" level="INFO">${value} = </msg>
+<status status="PASS" starttime="20220427 17:23:09.598" endtime="20220427 17:23:09.628"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220427 17:23:09.628" endtime="20220427 17:23:09.629"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${value}'=='None'</arg>
+<arg>log to console</arg>
+<arg>${value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220427 17:23:09.629" endtime="20220427 17:23:09.629"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:09.544" endtime="20220427 17:23:09.629"/>
+</iter>
+<status status="PASS" starttime="20220427 17:23:09.345" endtime="20220427 17:23:09.629"/>
+</for>
+<status status="PASS" starttime="20220427 17:23:06.268" endtime="20220427 17:23:09.629"/>
+</kw>
+<kw name="Finalise_TestCase" library="commun" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Log</arg>
+<arg>Test failed</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20220427 17:23:09.631" endtime="20220427 17:23:09.632"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20220427 17:23:09.632" endtime="20220427 17:23:09.632"/>
+</kw>
+<kw name="Run Keyword If Test Passed" library="BuiltIn">
+<arg>Log</arg>
+<arg>Test passed</arg>
+<doc>Runs the given keyword with the given arguments, if the test passed.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Test passed</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220427 17:23:09.632" level="INFO">Test passed</msg>
+<status status="PASS" starttime="20220427 17:23:09.632" endtime="20220427 17:23:09.632"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:09.632" endtime="20220427 17:23:09.632"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220427 17:23:09.632" endtime="20220427 17:23:11.755"/>
+</kw>
+<status status="PASS" starttime="20220427 17:23:09.631" endtime="20220427 17:23:11.755"/>
+</kw>
+<doc>Execute scenario 4</doc>
+<tag>scenario4</tag>
+<status status="PASS" starttime="20220427 17:22:29.649" endtime="20220427 17:23:11.756"/>
+</test>
+<status status="PASS" starttime="20220427 17:22:29.420" endtime="20220427 17:23:11.757"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">scenario4</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Scenario4">Scenario4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
